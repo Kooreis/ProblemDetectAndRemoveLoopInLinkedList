@@ -1,11 +1,15 @@
-import java.util.HashSet;
+class LinkedList {
+    Node head;
 
-class Node {
-    int data;
-    Node next;
+    void detectAndRemoveLoop() {
+        Node slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
 
-    Node(int data) {
-        this.data = data;
-        this.next = null;
+            if (slow == fast) {
+                removeLoop(slow);
+                return;
+            }
+        }
     }
-}
