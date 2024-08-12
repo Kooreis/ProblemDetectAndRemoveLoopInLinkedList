@@ -1,12 +1,11 @@
-using System;
-
-public class Node
+public class LinkedList
 {
-    public int data;
-    public Node next;
-    public Node(int d)
+    public Node head;
+
+    public void Push(int new_data)
     {
-        data = d;
-        next = null;
+        Node new_node = new Node(new_data);
+        new_node.next = head;
+        head = new_node;
     }
 }
